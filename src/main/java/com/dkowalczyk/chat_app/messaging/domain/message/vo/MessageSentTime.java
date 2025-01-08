@@ -1,4 +1,4 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.vo;
+package com.dkowalczyk.chat_app.messaging.domain.message.vo;
 
 import com.dkowalczyk.chat_app.shared.error.domain.Assert;
 

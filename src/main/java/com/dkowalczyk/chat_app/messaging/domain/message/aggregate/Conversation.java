@@ -1,7 +1,7 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.aggregate;
+package com.dkowalczyk.chat_app.messaging.domain.message.aggregate;
 
-import com.dkowalczyk.chat_app.messaging.domain.messages.vo.ConversationName;
-import com.dkowalczyk.chat_app.messaging.domain.messages.vo.ConversationPublicId;
+import com.dkowalczyk.chat_app.messaging.domain.message.vo.ConversationName;
+import com.dkowalczyk.chat_app.messaging.domain.message.vo.ConversationPublicId;
 import com.dkowalczyk.chat_app.messaging.domain.user.aggreagate.User;
 import com.dkowalczyk.chat_app.shared.error.domain.Assert;
 import org.jilt.Builder;
@@ -25,7 +25,7 @@ public class Conversation {
         this.dbId = dbId;
     }
 
-    public void assertMandatoryFields(Set<User> users, ConversationName name) {
+    private void assertMandatoryFields(Set<User> users, ConversationName name) {
         Assert.notNull("users", users);
         Assert.notNull("name", name);
     }
@@ -40,5 +40,13 @@ public class Conversation {
 
     public ConversationPublicId getConversationPublicId() {
         return conversationPublicId;
+    }
+
+    public ConversationName getConversationName() {
+        return conversationName;
+    }
+
+    public Long getDbId() {
+        return dbId;
     }
 }

@@ -1,6 +1,6 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.aggregate;
+package com.dkowalczyk.chat_app.messaging.domain.message.aggregate;
 
-import com.dkowalczyk.chat_app.messaging.domain.messages.vo.*;
+import com.dkowalczyk.chat_app.messaging.domain.message.vo.*;
 import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserPublicId;
 import com.dkowalczyk.chat_app.shared.error.domain.Assert;
 import org.jilt.Builder;

@@ -1,4 +1,4 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.aggregate;
+package com.dkowalczyk.chat_app.messaging.domain.message.aggregate;
 
 import com.dkowalczyk.chat_app.shared.error.domain.Assert;
 

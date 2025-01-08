@@ -1,6 +1,6 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.aggregate;
+package com.dkowalczyk.chat_app.messaging.domain.message.aggregate;
 
-import com.dkowalczyk.chat_app.messaging.domain.messages.vo.ConversationName;
+import com.dkowalczyk.chat_app.messaging.domain.message.vo.ConversationName;
 import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserPublicId;
 import com.dkowalczyk.chat_app.shared.error.domain.Assert;
 import org.jilt.Builder;
@@ -21,5 +21,13 @@ public class ConversationToCreate {
     private void assertMandatoryFields(Set<UserPublicId> members, ConversationName name) {
         Assert.notNull("name", name);
         Assert.notNull("members", members);
+    }
+
+    public Set<UserPublicId> getMembers() {
+        return members;
+    }
+
+    public ConversationName getName() {
+        return name;
     }
 }

@@ -1,6 +1,6 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.vo;
+package com.dkowalczyk.chat_app.messaging.domain.message.vo;
 
-import com.dkowalczyk.chat_app.shared.error.domain.Assert;
+import org.springframework.util.Assert;
 
 import java.util.UUID;
 

@@ -1,8 +1,8 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.repository;
+package com.dkowalczyk.chat_app.messaging.domain.message.repository;
 
-import com.dkowalczyk.chat_app.messaging.domain.messages.aggregate.Conversation;
-import com.dkowalczyk.chat_app.messaging.domain.messages.aggregate.ConversationToCreate;
-import com.dkowalczyk.chat_app.messaging.domain.messages.vo.ConversationPublicId;
+import com.dkowalczyk.chat_app.messaging.domain.message.aggregate.Conversation;
+import com.dkowalczyk.chat_app.messaging.domain.message.aggregate.ConversationToCreate;
+import com.dkowalczyk.chat_app.messaging.domain.message.vo.ConversationPublicId;
 import com.dkowalczyk.chat_app.messaging.domain.user.aggreagate.User;
 import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserPublicId;
 import org.springframework.data.domain.Page;
@@ -21,7 +21,7 @@ public interface ConversationRepository {
 
     int deleteByPublicId(UserPublicId userPublicId, ConversationPublicId conversationPublicId);
 
-    Optional<Conversation> getConversationByUsersPublicId(UserPublicId userPublicId, ConversationPublicId conversationPublicId);
+    Optional<Conversation> getConversationByUsersPublicIdAndPublicId(UserPublicId userPublicId, ConversationPublicId conversationPublicId);
 
     Optional<Conversation> getConversationByUserPublicIds(List<UserPublicId> publicIds);
 

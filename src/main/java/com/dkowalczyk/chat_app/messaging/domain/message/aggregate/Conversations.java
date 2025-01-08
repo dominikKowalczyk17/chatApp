@@ -1,4 +1,4 @@
-package com.dkowalczyk.chat_app.messaging.domain.messages.aggregate;
+package com.dkowalczyk.chat_app.messaging.domain.message.aggregate;
 
 import com.dkowalczyk.chat_app.shared.error.domain.Assert;
 
@@ -8,10 +8,5 @@ public record Conversations(List<Conversation> conversations) {
 
     public Conversations {
         Assert.field("conversations", conversations).notNull().noNullElement();
-    }
-
-    @Override
-    public List<Conversation> conversations() {
-        return conversations;
     }
 }
