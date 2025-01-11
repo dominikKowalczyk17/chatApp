@@ -6,7 +6,7 @@ import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserEmail;
 import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserPublicId;
 import org.springframework.data.domain.Page;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +25,7 @@ public interface UserRepository {
 
     int updateLastSeenByPublicId(UserPublicId userPublicId, Instant lastSeen);
 
-    List<User> getRecipientByConversationExcludingReader(ConversationPublicId conversationPublicId, UserPublicId readerPublicId);
+    List<User> getRecipientByConversationIdExcludingReader(ConversationPublicId conversationPublicId, UserPublicId readerPublicId);
 
     Optional<User> getOneByPublicId(UserPublicId userPublicId);
 }

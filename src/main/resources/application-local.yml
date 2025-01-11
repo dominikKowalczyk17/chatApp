@@ -1,0 +1,13 @@
+logging:
+  level:
+    ROOT: INFO
+    org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
+    com.dkowalczyk.chat_app: DEBUG
+    liquibase: DEBUG
+spring:
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true

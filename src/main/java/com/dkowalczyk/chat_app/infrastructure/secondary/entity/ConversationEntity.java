@@ -143,4 +143,12 @@ public class ConversationEntity  extends AbstractAuditingEntity<Long> {
     public int hashCode() {
         return Objects.hash(publicId, name);
     }
+
+    public void setUsers(Set<UserEntity> users) {
+        this.users = users;
+    }
+
+    public void setMessages(Set<MessageEntity> messages) {
+        this.messages = messages;
+    }
 }

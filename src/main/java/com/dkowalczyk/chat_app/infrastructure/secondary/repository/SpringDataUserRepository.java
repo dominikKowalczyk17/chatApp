@@ -7,11 +7,14 @@ import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserEmail;
 import com.dkowalczyk.chat_app.messaging.domain.user.vo.UserPublicId;
 import org.springframework.data.domain.Page;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
+
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class SpringDataUserRepository implements UserRepository {
 
     @Override
@@ -45,7 +48,7 @@ public class SpringDataUserRepository implements UserRepository {
     }
 
     @Override
-    public List<User> getRecipientByConversationExcludingReader(ConversationPublicId conversationPublicId, UserPublicId readerPublicId) {
+    public List<User> getRecipientByConversationIdExcludingReader(ConversationPublicId conversationPublicId, UserPublicId readerPublicId) {
         return List.of();
     }
 

@@ -137,7 +137,7 @@ public class MessageEntity extends AbstractAuditingEntity<Long> {
     }
 
     public void setPublicId(UUID publicId) {
-        this.publicId = this.publicId;
+        this.publicId = publicId;
     }
 
     public Instant getSendTime() {

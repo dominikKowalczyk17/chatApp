@@ -1,6 +1,8 @@
 package com.dkowalczyk.chat_app.infrastructure.secondary.repository;
 
 
+import com.dkowalczyk.chat_app.infrastructure.secondary.entity.ConversationEntity;
+import com.dkowalczyk.chat_app.infrastructure.secondary.entity.UserEntity;
 import com.dkowalczyk.chat_app.messaging.domain.message.aggregate.Conversation;
 import com.dkowalczyk.chat_app.messaging.domain.message.aggregate.ConversationToCreate;
 import com.dkowalczyk.chat_app.messaging.domain.message.repository.ConversationRepository;
@@ -17,10 +19,16 @@ import java.util.UUID;
 
 @Repository
 public class SpringDataConversationRepository implements ConversationRepository {
+    private final JpaConversationRepository jpaConversationRepository;
+
+    public SpringDataConversationRepository(JpaConversationRepository jpaConversationRepository) {
+        this.jpaConversationRepository = jpaConversationRepository;
+    }
     @Override
     public Conversation save(ConversationToCreate conversation, List<User> members) {
-
-        return null;
+        ConversationEntity entity = ConversationEntity.from(conversation);
+        entity.setUsers(UserEntity.from(members));
+        return ConversationEntity.toDomain(jpaConversationRepository.save(entity));
     }
 
     @Override

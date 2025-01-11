@@ -22,7 +22,7 @@ public class MessageContentBinaryEntity extends AbstractAuditingEntity<Long> {
     private Long id;
 
     @Lob
-    @Column(name = "file", nullable = false)
+    @Column(name = "file", nullable = false, columnDefinition = "oid")
     private byte[] file;
 
     @Column(name = "file_content_type")
