@@ -81,7 +81,3 @@ issuer-uri: http://localhost:9080/realms/chatapp
 2. Commit your changes
 3. Push to the branch
 4. Create a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details
