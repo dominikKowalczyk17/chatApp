@@ -15,25 +15,28 @@ Spring Boot based chat application with secure authentication and real-time mess
 1. Create `.env` file in root directory based on `.env.example`:
 
 
-env
+```env
 DB_HOST=localhost
 DB_PORT=5432
 POSTGRES_DB=defaultdb
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=your_password
+```
 
 
 ## Running Locally
 
 1. Start the database:
 
-bash
+```sh
 docker-compose up -d
+```
 
 2. Run the application:
 
-bash
+```sh
 ./mvnw spring-boot:run
+```
 
 The application will be available at `http://localhost:8080`
 
@@ -65,14 +68,14 @@ src/main/resources/db/changelog/
 The application uses Keycloak for authentication and authorization. Security configuration can be found in `application.yml`:
 
 
-yaml
+```yaml
 spring:
 security:
 oauth2:
 resourceserver:
 jwt:
 issuer-uri: http://localhost:9080/realms/chatapp
-
+```
 
 
 ## Contributing
